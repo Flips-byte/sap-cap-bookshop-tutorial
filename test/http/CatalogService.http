@@ -1,0 +1,123 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Books
+# @name Books_GET
+GET {{server}}/odata/v4/catalog/Books
+Authorization: Basic {{username}}:{{password}}
+
+
+### Books
+# @name Books_POST
+POST {{server}}/odata/v4/catalog/Books
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 765625,
+  "title": "title-765625",
+  "author": {
+    "ID": 17645494
+  },
+  "stock": 65
+}
+
+
+### Books
+# @name Books_PATCH
+PATCH {{server}}/odata/v4/catalog/Books/16695401
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "stock": 20
+}
+
+
+### Books
+# @name Books_DELETE
+DELETE {{server}}/odata/v4/catalog/Books/765625
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_GET
+GET {{server}}/odata/v4/catalog/Authors
+Authorization: Basic {{username}}:{{password}}
+
+
+### Authors
+# @name Authors_POST
+POST {{server}}/odata/v4/catalog/Authors
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 17645494,
+  "name": "name-17645494"
+}
+
+
+### Authors
+# @name Authors_PATCH
+PATCH {{server}}/odata/v4/catalog/Authors/17645494
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 17645494,
+  "name": "name-17645494"
+}
+
+
+### Authors
+# @name Authors_DELETE
+DELETE {{server}}/odata/v4/catalog/Authors/17645494
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Orders
+# @name Orders_GET
+GET {{server}}/odata/v4/catalog/Orders
+Authorization: Basic {{username}}:{{password}}
+
+
+### Orders
+# @name Orders_POST
+POST {{server}}/odata/v4/catalog/Orders
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 1,
+  "book": {
+    "ID": 16695401
+  },
+  "amount": 85
+}
+
+
+### Orders
+# @name Orders_PATCH
+PATCH {{server}}/odata/v4/catalog/Orders/13296999
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": 13296999,
+  "book": {
+    "ID": 765625
+  },
+  "amount": 85
+}
+
+
+### Orders
+# @name Orders_DELETE
+DELETE {{server}}/odata/v4/catalog/Orders/13296999
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
