@@ -4,6 +4,7 @@ entity Books {
 key ID     : Integer;
     title  : String;
     author : Association to Authors;
+    price  : Decimal(4,2);
     stock  : Integer;
 }
 
@@ -15,7 +16,8 @@ key ID    : Integer;
 }
 
 entity Orders {
-key ID     : Integer;
-    book   : Association to Books;
-    amount : Integer;
+key ID          : Integer;
+    book        : Association to Books;
+    amount      : Integer;
+    totalPrice  : Decimal(9,2);
 }
