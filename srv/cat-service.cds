@@ -7,9 +7,7 @@ service CatalogService {
             *,
                stock < 50 ? title : title || ' - 10% discount' as displayTitle : String
     }
-
-
-
+    
     entity Authors as projection on bookshop.Authors;
     entity Orders as projection on bookshop.Orders;
 

@@ -93,11 +93,11 @@ Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 
 {
-  "ID": 1,
+  "ID": 2,
   "book": {
-    "ID": 16695401
+    "ID": 11600840
   },
-  "amount": 85
+  "amount": 10
 }
 
 
