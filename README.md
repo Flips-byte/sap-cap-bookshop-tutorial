@@ -30,7 +30,7 @@ Im Tutorial widersprechen sich Text und Code. Der Code hängt den Rabatt-Zusatz 
 
 ![Aufgabe im Tutorial](docs/screenshots/tutorial-task.png)
 
-Meine Version in der srv/cat-service.cds:
+Die Stelle im Tutorial.
 
 ```cds
 stock < 50 ? title : title || ' - 10% discount'
@@ -88,4 +88,29 @@ Den Gesamtbetrag speichere ich in der Bestellung und nicht beim Buch.
 
 Zwei Sachen fehlen noch. Der `before`-Handler prüft nicht, ob das bestellte Buch überhaupt existiert. Bei einer falschen Buch-ID kommt deshalb ein interner Fehler (HTTP 500) statt einer verständlichen Meldung.
 
-Außerdem wird nicht geprüft, ob genug auf Lager ist. Bei einer großen Bestellung kann der Bestand dadurch ins Minus gehen.
+Außerdem wird nicht geprüft, ob genug auf Lager ist. Bei einer großen Bestellung kann der Bestand dadurch ins Minus gehen. Beides will ich als Nächstes beheben.
+
+## Projekt lokal starten
+
+Voraussetzungen: Node.js und das SAP-Entwicklungskit `@sap/cds-dk`, global installiert mit `npm i -g @sap/cds-dk`.
+
+1. Klone das Repository:
+
+   ```bash
+   git clone https://github.com/Flips-byte/sap-cap-bookshop-tutorial.git
+   cd sap-cap-bookshop-tutorial
+   ```
+
+2. Installiere die Abhängigkeiten:
+
+   ```bash
+   npm install
+   ```
+
+3. Starte den Service:
+
+   ```bash
+   cds watch
+   ```
+
+4. Öffne http://localhost:4004 im Browser. Die Testanfragen in `test/http/CatalogService.http` kannst du mit dem REST Client direkt in VS Code ausführen.
