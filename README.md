@@ -30,7 +30,7 @@ Im Tutorial widersprechen sich Text und Code. Der Code hängt den Rabatt-Zusatz 
 
 ![Aufgabe im Tutorial](docs/screenshots/tutorial-task.png)
 
-Die Stelle im Tutorial.
+Meine Version in srv/cat-service.cds:
 
 ```cds
 stock < 50 ? title : title || ' - 10% discount'
